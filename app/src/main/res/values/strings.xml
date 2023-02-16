@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">MySchoolNotes</string>
+    <string name="registromayus">REGISTRO</string>
+    <string name="registro">Registro</string>
+    <string name="loginmayus">INICIO DE SESIÓN</string>
+    <string name="login">Inicio de sesión</string>
+    <string name="correo">correo:</string>
+    <string name="correohint">Introduce el correo</string>
+    <string name="contra">contraseña:</string>
+    <string name="contrahint">Introduce la contraseña</string>
+    <string name="nuevocontacto">Nuevo contacto</string>
+    <string name="vercontacto">Ver contactos</string>
+    <string name="contactos">Contactos</string>
+    <string name="nombre">Nombre</string>
+    <string name="nombrehint">Introduce el nombre</string>
+    <string name="tlf">Número móvil</string>
+    <string name="tlfhint">Introduce el número (9 char.)</string>
+    <string name="mail">Email</string>
+    <string name="mailhint">Introduce el email</string>
+    <string name="direccion">Domicilio</string>
+    <string name="direccionhint">Introduce el domicilio</string>
+    <string name="modificar">Contacto</string>
+    <string name="add">AÑADIR</string>
+    <string name="del">BORRAR</string>
+    <string name="edit">GUARDAR</string>
+    <string name="call">LLAMAR</string>
+    <string name="realcall">LLAMAR DE VERDAD</string>
+
+
+</resources>
