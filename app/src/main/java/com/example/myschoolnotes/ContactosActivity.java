@@ -65,8 +65,6 @@ public class ContactosActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
 
