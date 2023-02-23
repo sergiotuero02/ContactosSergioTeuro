@@ -47,6 +47,9 @@ public class NuevoContactoActivity extends AppCompatActivity {
                 EditText nombreET = findViewById(R.id.nombreET);
                 String nombre = String.valueOf(nombreET.getText());
 
+                EditText aliasET = findViewById(R.id.aliasET);
+                String alias = String.valueOf(aliasET.getText());
+
                 EditText direccionET = findViewById(R.id.direccionET);
                 String direccion = String.valueOf(direccionET.getText());
 
@@ -57,6 +60,7 @@ public class NuevoContactoActivity extends AppCompatActivity {
                 String telefono = String.valueOf(telefonoET.getText());
                 Pattern stringRegex = Pattern.compile("^[A-Za-z]\\w{2,29}$");
                 Matcher matcherNombre = stringRegex.matcher(nombre);
+                Matcher matcherAlias = stringRegex.matcher(alias);
 
                 Pattern direccionRegex = Pattern.compile("^[a-zA-Z0-9\\s]*$");
                 Matcher matcherDireccion = direccionRegex.matcher(direccion);
@@ -75,6 +79,12 @@ public class NuevoContactoActivity extends AppCompatActivity {
                     nombreET.setText("");
                 }
 
+                if (matcherAlias.matches()) {
+                    c.setAlias(alias);
+                } else {
+                    erroresContact += "El alias \n";
+                    nombreET.setText("");
+                }
 
                 if (matcherDireccion.matches()) {
                     c.setDireccion(direccion);
@@ -82,7 +92,6 @@ public class NuevoContactoActivity extends AppCompatActivity {
                     erroresContact += "El domicilio \n";
                     direccionET.setText("");
                 }
-
 
                 if (matcherMail.matches()) {
                     c.setMail(mail);
@@ -134,6 +143,7 @@ public class NuevoContactoActivity extends AppCompatActivity {
                                 dbRef.push().setValue(c);
                                 Toast.makeText(NuevoContactoActivity.this, "Guardado.", Toast.LENGTH_SHORT).show();
                                 nombreET.setText("");
+                                aliasET.setText("");
                                 direccionET.setText("");
                                 mailET.setText("");
                                 telefonoET.setText("");

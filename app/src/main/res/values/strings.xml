@@ -9,10 +9,15 @@
     <string name="contra">contraseña:</string>
     <string name="contrahint">Introduce la contraseña</string>
     <string name="nuevocontacto">Nuevo contacto</string>
+    <string name="notas">Notas</string>
     <string name="vercontacto">Ver contactos</string>
     <string name="contactos">Contactos</string>
+    <string name="titulohint">Introduce el título</string>
+    <string name="contenidohint">Introduce el contenido</string>
     <string name="nombre">Nombre</string>
     <string name="nombrehint">Introduce el nombre</string>
+    <string name="alias">Alias</string>
+    <string name="aliashint">Introduce el alias</string>
     <string name="tlf">Número móvil</string>
     <string name="tlfhint">Introduce el número (9 char.)</string>
     <string name="mail">Email</string>

@@ -4,9 +4,19 @@ import androidx.annotation.NonNull;
 
 public class Contacto {
     String nombre;
+
+    String alias;
     String direccion;
     String mail;
     String telefono;
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
 
     public String getNombre() {
         return nombre;

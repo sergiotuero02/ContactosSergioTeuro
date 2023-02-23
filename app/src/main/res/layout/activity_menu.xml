@@ -12,7 +12,7 @@
         android:layout_height="84dp"
         android:backgroundTint="#004AAD"
         android:fontFamily="@font/lato"
-        android:text="Ver contactos"
+        android:text="@string/vercontacto"
         android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="50dp"
@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <Button
         android:id="@+id/nuevoBTN"
@@ -28,7 +28,7 @@
         android:layout_height="84dp"
         android:backgroundTint="#326DBB"
         android:fontFamily="@font/lato"
-        android:text="Nuevo contacto"
+        android:text="@string/nuevocontacto"
         android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="50dp"
@@ -36,7 +36,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413" />
+        app:layout_constraintVertical_bias="0.283" />
+
+    <Button
+        android:id="@+id/notasBTN"
+        android:layout_width="273dp"
+        android:layout_height="84dp"
+        android:backgroundTint="#326DBB"
+        android:fontFamily="@font/lato"
+        android:text="@string/notas"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.711" />
 
     <ImageButton
         android:id="@+id/salirBTN"

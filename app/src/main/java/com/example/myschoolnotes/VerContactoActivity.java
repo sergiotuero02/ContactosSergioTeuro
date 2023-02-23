@@ -37,6 +37,7 @@ public class VerContactoActivity extends AppCompatActivity {
         EditText numeroET = findViewById(R.id.numeroET);
         EditText emailET = findViewById(R.id.emailET);
         EditText direccionET = findViewById(R.id.direccionET);
+        EditText aliasET = findViewById(R.id.aliasET);
 
         Button borrarBTN = findViewById(R.id.borrarBTN);
         Button editBTN = findViewById(R.id.editBTN);
@@ -44,6 +45,7 @@ public class VerContactoActivity extends AppCompatActivity {
         Button realcallBTN = findViewById(R.id.realcallBTN);
 
         nombreET.setText(contactoSelected.getNombre());
+        aliasET.setText(contactoSelected.getAlias());
         numeroET.setText(contactoSelected.getTelefono());
         emailET.setText(contactoSelected.getMail());
         direccionET.setText(contactoSelected.getDireccion());
@@ -84,12 +86,14 @@ public class VerContactoActivity extends AppCompatActivity {
         Contacto c = new Contacto();
         String erroresContact = "Revise: \n";
         String nombre = String.valueOf(nombreET.getText());
+        String alias = String.valueOf(aliasET.getText());
         String direccion = String.valueOf(direccionET.getText());
         String mail = String.valueOf(emailET.getText());
         String telefono = String.valueOf(numeroET.getText());
 
         Pattern stringRegex = Pattern.compile("^[A-Za-z]\\w{2,29}$");
         Matcher matcherNombre = stringRegex.matcher(nombre);
+        Matcher matcherAlias = stringRegex.matcher(alias);
 
         Pattern direccionRegex = Pattern.compile("^[a-zA-Z0-9\\s]*$");
         Matcher matcherDireccion = direccionRegex.matcher(direccion);
@@ -108,6 +112,12 @@ public class VerContactoActivity extends AppCompatActivity {
             nombreET.setText("");
         }
 
+        if (matcherAlias.matches()) {
+            c.setAlias(alias);
+        } else {
+            erroresContact += "El alias \n";
+            aliasET.setText("");
+        }
 
         if (matcherDireccion.matches()) {
             c.setDireccion(direccion);
@@ -178,6 +188,7 @@ public class VerContactoActivity extends AppCompatActivity {
                                     String clave = ds.getKey();
                                     contactReference.child(clave).child("direccion").setValue(direccion);
                                     contactReference.child(clave).child("mail").setValue(mail);
+                                    contactReference.child(clave).child("alias").setValue(alias);
                                     contactReference.child(clave).child("nombre").setValue(nombre);
                                     contactReference.child(clave).child("telefono").setValue(telefono);
                                     Toast.makeText(VerContactoActivity.this, "Actualizado.", Toast.LENGTH_SHORT).show();
@@ -190,7 +201,7 @@ public class VerContactoActivity extends AppCompatActivity {
                         });
                         Intent intent = new Intent(VerContactoActivity.this, MenuActivity.class);
                         startActivity(intent);
-                        finish();
+
                     }
 
                 }

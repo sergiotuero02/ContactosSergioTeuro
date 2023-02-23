@@ -21,12 +21,21 @@ public class MenuActivity extends AppCompatActivity {
 
         Button nuevoBTN = findViewById(R.id.nuevoBTN);
         Button verBTN = findViewById(R.id.verBTN);
+        Button notasBTN = findViewById(R.id.notasBTN);
         ImageButton salirBTN = findViewById(R.id.salirBTN);
 
         nuevoBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this, NuevoContactoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        notasBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, NotaActivity.class);
                 startActivity(intent);
             }
         });
