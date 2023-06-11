@@ -7,6 +7,7 @@ import static com.example.myschoolnotes.activities.LoginActivity.usuarioAct;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -38,6 +39,7 @@ public class VerAsignaturaActivity extends AppCompatActivity {
         nombreET.setText(asignaturaSelected.getNombre());
 
         Button addBTN = findViewById(R.id.add3BTN);
+        Button borrarBTN = findViewById(R.id.borrarBTN);
         EditText notaET = findViewById(R.id.notaET);
 
 
@@ -80,5 +82,31 @@ public class VerAsignaturaActivity extends AppCompatActivity {
                 });
             }
         });
+
+        borrarBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseReference uref = FirebaseDatabase.getInstance().getReference("agenda");
+                DatabaseReference asignaturaReference = uref.child("asignaturaUser" + usuarioAct.getUid());
+                Query query = asignaturaReference.orderByChild("nombre").equalTo(asignaturaSelected.getNombre());
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds : snapshot.getChildren()) {
+                            String clave = ds.getKey();
+                            asignaturaReference.child(clave).removeValue();
+                            Toast.makeText(VerAsignaturaActivity.this, "Eliminado.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                    }
+                });
+                Intent intent = new Intent(VerAsignaturaActivity.this, AsignaturasMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
