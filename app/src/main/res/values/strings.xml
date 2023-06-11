@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Contactos</string>
+    <string name="app_name">MySchoolNotes</string>
     <string name="registromayus">REGISTRO</string>
     <string name="registro">Registro</string>
     <string name="loginmayus">INICIO DE SESIÓN</string>
@@ -30,6 +30,37 @@
     <string name="edit">GUARDAR</string>
     <string name="call">LLAMAR</string>
     <string name="realcall">LLAMAR DE VERDAD</string>
-
+    <string name="cero">0</string>
+    <string name="uno">1</string>
+    <string name="dos">2</string>
+    <string name="tres">3</string>
+    <string name="cuatro">4</string>
+    <string name="cinco">5</string>
+    <string name="seis">6</string>
+    <string name="siete">7</string>
+    <string name="ocho">8</string>
+    <string name="nueve">9</string>
+    <string name="suma">+</string>
+    <string name="resta">-</string>
+    <string name="division">/</string>
+    <string name="cuadrado">X2</string>
+    <string name="multiplicacion">X</string>
+    <string name="inv">INV</string>
+    <string name="borrar">DEL</string>
+    <string name="punto">.</string>
+    <string name="igual">=</string>
+    <string name="comentario">Comentario: </string>
+    <string name="calculadoraBTN">Calculadora</string>
+    <string name="asunto">Asunto: *</string>
+    <string name="email">Correo electrónico: *</string>
+    <string name="puntuacion">Puntuación: *</string>
+    <string name="emailhint">Introduce el correo electrónico</string>
+    <string name="asuntohint">Introduce el asunto</string>
+    <string name="comentariohint">Introduce el comentario</string>
+    <string name="enviar">Enviar</string>
+    <string name="obligatorios">* Campos obligatorios</string>
+    <string name="calculadora">Calculadora</string>
+    <string name="contacto">Contacto</string>
+    <string name="sergio">Sergio Tuero Gonzalez</string>
 
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.ContactosActivity">
+    tools:context=".activities.ChartActivity">
 
     <TextView
         android:id="@+id/tituloTV"
@@ -12,7 +12,7 @@
         android:layout_height="67dp"
         android:layout_marginTop="52dp"
         android:fontFamily="@font/lato"
-        android:text="@string/contactos"
+        android:text="Asignaturas"
         android:textAlignment="textStart"
         android:textSize="50dp"
         android:textStyle="bold"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/listaNombres"
+        android:id="@+id/listaAsignaturas"
         android:layout_width="317dp"
         android:layout_height="573dp"
         android:layout_marginStart="55dp"
@@ -32,5 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.66" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

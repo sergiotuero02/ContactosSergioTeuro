@@ -1,4 +1,4 @@
-package com.example.myschoolnotes;
+package com.example.myschoolnotes.entities;
 
 public class Nota {
 

@@ -4,61 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.NotaActivity2">
+    tools:context=".activities.NuevaAsignaturaActivity">
 
     <TextView
         android:id="@+id/tituloTV"
-        android:layout_width="278dp"
-        android:layout_height="67dp"
+        android:layout_width="327dp"
+        android:layout_height="48dp"
         android:fontFamily="@font/lato"
-        android:text="@string/notas"
+        android:text="Nueva asignatura"
         android:textAlignment="textStart"
-        android:textSize="50dp"
+        android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.234"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.104" />
 
-    <EditText
-        android:id="@+id/tituloET"
-        android:layout_width="339dp"
-        android:layout_height="88dp"
-        android:ems="10"
-        android:hint="@string/titulohint"
-        android:inputType="textEmailAddress"
-        android:textSize="20sp"
+    <TextView
+        android:id="@+id/nombreTV"
+        android:layout_width="233dp"
+        android:layout_height="58dp"
+        android:text="@string/nombre"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.243"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.199"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.452" />
 
     <EditText
-        android:id="@+id/contenidoET"
-        android:layout_width="339dp"
-        android:layout_height="266dp"
+        android:id="@+id/nombreAsignaturaET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/contenidohint"
-        android:inputType="textEmailAddress"
-        android:textSize="20sp"
+        android:hint="@string/nombrehint"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.214"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.525" />
 
     <Button
-        android:id="@+id/editBTN"
-        android:layout_width="307dp"
-        android:layout_height="49dp"
-        android:backgroundTint="@color/bluebutton"
+        android:id="@+id/add2BTN"
+        android:layout_width="269dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#326DBB"
         android:fontFamily="@font/lato"
-        android:text="@string/edit"
+        android:text="AÑADIR"
         android:textSize="18dp"
         android:textStyle="bold"
         app:cornerRadius="50dp"
@@ -66,6 +62,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845" />
+        app:layout_constraintVertical_bias="0.962" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

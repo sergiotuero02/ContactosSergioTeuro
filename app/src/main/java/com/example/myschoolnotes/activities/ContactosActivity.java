@@ -1,7 +1,7 @@
-package com.example.myschoolnotes;
+package com.example.myschoolnotes.activities;
 
-import static com.example.myschoolnotes.LoginActivity.usuarioAct;
-import static com.example.myschoolnotes.MenuActivity.dbRef;
+import static com.example.myschoolnotes.activities.LoginActivity.usuarioAct;
+import static com.example.myschoolnotes.activities.MenuActivity.dbRef;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.myschoolnotes.R;
+import com.example.myschoolnotes.entities.Contacto;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

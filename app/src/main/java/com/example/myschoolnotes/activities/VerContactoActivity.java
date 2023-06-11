@@ -1,8 +1,7 @@
-package com.example.myschoolnotes;
+package com.example.myschoolnotes.activities;
 
-import static com.example.myschoolnotes.ContactosActivity.contactoSelected;
-import static com.example.myschoolnotes.LoginActivity.usuarioAct;
-import static com.example.myschoolnotes.MenuActivity.dbRef;
+import static com.example.myschoolnotes.activities.ContactosActivity.contactoSelected;
+import static com.example.myschoolnotes.activities.LoginActivity.usuarioAct;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myschoolnotes.R;
+import com.example.myschoolnotes.entities.Contacto;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -72,7 +73,7 @@ public class VerContactoActivity extends AppCompatActivity {
                     public void onCancelled(@NonNull DatabaseError error) {
                     }
                 });
-                Intent intent = new Intent(VerContactoActivity.this, MenuActivity.class);
+                Intent intent = new Intent(VerContactoActivity.this, ContactsMenuActivity.class);
                 startActivity(intent);
         }
     });
@@ -199,7 +200,7 @@ public class VerContactoActivity extends AppCompatActivity {
                             public void onCancelled(@NonNull DatabaseError error) {
                             }
                         });
-                        Intent intent = new Intent(VerContactoActivity.this, MenuActivity.class);
+                        Intent intent = new Intent(VerContactoActivity.this, ContactsMenuActivity.class);
                         startActivity(intent);
 
                     }

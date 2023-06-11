@@ -13,6 +13,6 @@
         <!-- Status bar color. -->
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/grey</item>
-        <item name="srcCompat">@drawable/logodark</item>
+        <item name="srcCompat">@drawable/myschoolnotes2</item>
     </style>
 </resources>

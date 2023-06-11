@@ -1,4 +1,4 @@
-package com.example.myschoolnotes;
+package com.example.myschoolnotes.activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,38 +12,35 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myschoolnotes.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends AppCompatActivity {
-    public static FirebaseAuth mAuth;
-    public static FirebaseUser usuarioAct;
-
+public class RegistroActivity extends AppCompatActivity {
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_registro);
 
-        Button login = findViewById(R.id.inicioBTN);
-        EditText correo = findViewById(R.id.correoET);
-        EditText contra = findViewById(R.id.contraET);
+        Button registroBTN = findViewById(R.id.registroBTN1);
+        EditText correo = findViewById(R.id.correoET1);
+        EditText contra = findViewById(R.id.contraET1);
 
-        login.setOnClickListener(new View.OnClickListener() {
+        registroBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login(correo.getText().toString(), contra.getText().toString());}
+                registro(correo.getText().toString(), contra.getText().toString());
+            }
         });
 
-
     }
-
-    public void login(String correo, String contrasena) {
+    public void registro(String correo, String contrasena) {
         if (correo.equals("") || contrasena.equals("") || contrasena.length()<4) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-            builder.setMessage("Introduce todos los campos y/o compruebe la contraseña")
+            AlertDialog.Builder builder = new AlertDialog.Builder(RegistroActivity.this);
+            builder.setMessage("Introduce todos los campos y/o compruebe la longitud de la contraseña (4 char min.) . Puede que el correo no esté dispoible")
                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
 
@@ -52,22 +49,28 @@ public class LoginActivity extends AppCompatActivity {
             builder.show();
         } else {
             mAuth = FirebaseAuth.getInstance();
-            mAuth.signInWithEmailAndPassword(correo, contrasena)
+            mAuth.createUserWithEmailAndPassword(correo, contrasena)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                usuarioAct = mAuth.getCurrentUser();
-                                Toast.makeText(LoginActivity.this, "Authentication succesful.",
+                                Toast.makeText(RegistroActivity.this, "Registro completado.",
                                         Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+                                Intent intent = new Intent(RegistroActivity.this, LoginActivity.class);
                                 startActivity(intent);
+
                             } else {
-                                Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
+                                AlertDialog.Builder builder = new AlertDialog.Builder(RegistroActivity.this);
+                                builder.setMessage("Login incorrecto")
+                                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int id) {
+
+                                            }
+                                        });
                             }
                         }
                     });
         }
     }
+
 }

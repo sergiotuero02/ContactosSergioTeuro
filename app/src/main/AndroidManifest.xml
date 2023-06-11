@@ -3,48 +3,80 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/myschoolnotes"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo"
+        android:roundIcon="@drawable/myschoolnotes"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySchoolNotes"
         tools:targetApi="31">
         <activity
-            android:name=".NotaActivity"
+            android:name=".activities.RecordatorioActivity"
             android:exported="false" />
         <activity
-            android:name=".ContactosActivity"
+            android:name=".activities.PomodoroActivity"
             android:exported="false" />
         <activity
-            android:name=".VerContactoActivity"
+            android:name=".activities.ChartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.VerAsignaturaActivity"
             android:exported="false" />
         <activity
-            android:name=".NuevoContactoActivity"
+            android:name=".activities.AsignaturasActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".activities.NuevaAsignaturaActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.AsignaturasMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AsignaturasActivityChart"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CalculadoraActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.NotaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ContactosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.VerContactoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NuevoContactoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ContactsMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.LoginActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".RegistroActivity"
+            android:name=".activities.RegistroActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
