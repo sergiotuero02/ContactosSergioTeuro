@@ -62,4 +62,6 @@
     <string name="calculadora">Calculadora</string>
     <string name="contacto">Contacto</string>
     <string name="sergio">Sergio Tuero Gonzalez</string>
+    <string name="back"><![CDATA[<-]]></string>
+    <string name="forward"><![CDATA[->]]></string>
 </resources>

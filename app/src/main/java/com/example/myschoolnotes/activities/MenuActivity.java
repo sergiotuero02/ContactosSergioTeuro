@@ -81,6 +81,14 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        horarioBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, HorarioActivity.class);
+                startActivity(intent);
+            }
+        });
+
         pomodoroBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +97,13 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        misdatosBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, DatosActivity.class);
+                startActivity(intent);
+            }
+        });
 
         salirBTN.setOnClickListener(new View.OnClickListener() {
             @Override
